@@ -1,0 +1,30 @@
+{
+  "name": "Real-Estate-Dapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "truffle-assertions": "^0.9.2"
+  },
+  "devDependencies": {
+    "solidity-coverage": "^0.6.7"
+  },
+  "scripts": {
+    "test": "truffle test",
+    "test:coverage": "solidity-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acor12/Real-State-Dapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acor12/Real-State-Dapp/issues"
+  },
+  "homepage": "https://github.com/acor12/Real-State-Dapp#readme"
+}
