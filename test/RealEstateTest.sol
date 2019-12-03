@@ -14,8 +14,4 @@ contract RealEstateTest {
         RealEstate realEstate = new RealEstate();
         Assert.equal(realEstate.getBalance(), 0, "Your balance is different than 0");
     }
-    function testGetSoldProperitiesCount() public {
-        RealEstate realEstate = new RealEstate();
-        Assert.equal(realEstate.soldPropertiesCount(), 0, "Sold properties count is different than 0");
-    }
 }

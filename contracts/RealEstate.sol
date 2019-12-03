@@ -3,17 +3,19 @@ pragma solidity ^0.5.0;
 contract RealEstate {
     address payable public seller;
     uint private balance;
+    uint[] public index;
 
     struct PublishedProperty {
         string hash;
+        string name;
         string description;
-        uint value;
+        uint price;
+        bool sold;
     }
 
     PublishedProperty[] public publishedProperties;
-    PublishedProperty[] public soldProperties;
 
-    event newProperty(string hash, string description, uint value);
+    event newProperty(string hash, string name, string description, uint price);
 
     constructor() public {
         seller = msg.sender;
@@ -32,26 +34,26 @@ contract RealEstate {
         _;
     }
 
-    function newPropertyPublication(string memory hash, string memory description, uint value) public onlySeller {
-        publishedProperties.push(PublishedProperty(hash, description, value));
-        emit newProperty(hash, description, value);
+    function newPropertyPublication(string memory hash, string memory name, string memory description, uint price) public onlySeller {
+        publishedProperties.push(PublishedProperty(hash, name, description, price, false));
+        index.push(publishedProperties.length);
+        emit newProperty(hash, name, description, price);
     }
-    function properitiesCount() public view returns (uint) {
-        return publishedProperties.length;
+    function properitiesCount() public view returns (uint[] memory) {
+        return index;
     }
-    function buyAProperity(uint index) public payable onlyBuyer returns (string memory) {
+    function getProperty(uint _index) public view returns (string memory, string memory, string memory, uint, bool) {
+        PublishedProperty memory property = publishedProperties[_index];
+        return (property.hash, property.name, property.description, property.price, property.sold);
+    }
+    function buyAProperity(uint _index) public payable onlyBuyer returns (string memory) {
         balance += msg.value;
-        soldProperties.push(publishedProperties[index]);
-
-        delete publishedProperties[index];
+        publishedProperties[_index].sold = true;
 
         return "Welcome! Home Sweet Home.";
     }
     function getBalance() public view onlySeller returns (uint) {
         return balance;
-    }
-    function soldPropertiesCount() public view returns (uint) {
-        return soldProperties.length;
     }
     function transferBalance() public payable onlySeller withdrawalBalance returns (string memory) {
         seller.transfer(balance);
