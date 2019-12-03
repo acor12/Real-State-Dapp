@@ -11,8 +11,8 @@ import RootContainer from './containers/RootContainer';
 
 import "./App.css";
 
-const composeEnhacers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE || compose;
-const store = createStore(rootReducer, {}, (applyMiddleware(thunk, createPromise({
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk, createPromise({
   promiseTypeSuffixes: ['START', 'SUCCESS', 'ERROR'],
 }))))
 
