@@ -20,23 +20,43 @@ contract("RealEstate", (accounts) => {
         })
 
     })
-    it("get properities count", async () => {
-        assert.equal(await realEstate.properitiesCount(), 0);
+    it("get properties count", async () => {
+        assert.equal(await realEstate.propertiesCount.call(), 0);
     })
     it("get properity", async () => {
         await realEstate.newPropertyPublication('0x.' + '0'.repeat(64), 'test', 'foo', 10);
         truffleAssert.passes(realEstate.getProperty(0));
     })
+    it("get throw on trying to add a  property", async () => {
+        truffleAssert.fails(realEstate.newPropertyPublication('0x.' + '0'.repeat(64), 'test', 'foo', 10, { from: secondAccount }));
+    })
     it("buy a new property", async () => {
         await realEstate.newPropertyPublication('0x.' + '0'.repeat(64), 'test', 'foo', 10);
-        truffleAssert.passes(realEstate.buyAProperity(0, { from: secondAccount, value: 10 }));
+        truffleAssert.passes(realEstate.buyAProperty(0, { from: secondAccount, value: 10 }));
     })
+
+    it("throw buy a new property", async () => {
+        await realEstate.newPropertyPublication('0x.' + '0'.repeat(64), 'test', 'foo', 10);
+        truffleAssert.fails(realEstate.buyAProperty(0, { from: firstAccount, value: 10 }));
+    })
+
     it("get all balance", async () => {
         truffleAssert.passes(realEstate.getBalance(), 0, "Your balance is different than 0");
     })
     it("withdrawal Balance", async () => {
         await realEstate.newPropertyPublication('0x.' + '0'.repeat(64), 'test', 'foo', 10);
-        truffleAssert.passes(realEstate.buyAProperity(0, { from: secondAccount, value: 10 }));
+        truffleAssert.passes(realEstate.buyAProperty(0, { from: secondAccount, value: 10 }));
         truffleAssert.passes(realEstate.transferBalance({ to: firstAccount, value: realEstate.balance }))
+    })
+
+    it("throw trying to withdrawal Balance", async () => {
+        truffleAssert.fails(realEstate.transferBalance({ to: firstAccount, value: realEstate.balance }))
+    })
+
+    it("get sold properties count", async () => {
+        await realEstate.newPropertyPublication('0x.' + '0'.repeat(64), 'test', 'foo', 10);
+        realEstate.buyAProperty(0, { from: secondAccount, value: 10 });
+        let result = await realEstate.soldPropertiesCount.call();
+        assert.equal(result.length, 1);
     })
 });
