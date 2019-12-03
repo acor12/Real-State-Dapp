@@ -95,7 +95,7 @@ export default class HouseProfileView extends React.Component {
                                     <p className="information-descrip">{this.state.description}</p>
                                     {
                                         !this.state.sold ?
-                                            this.props.seller === this.props.accounts[0] ?
+                                            this.props.seller.toLowerCase() === this.props.accounts[0].toLowerCase() ?
                                                 <div className="house-status">
                                                     {
                                                         this.state.sold ?
