@@ -1,7 +1,8 @@
-import React from 'react';
-import HeaderContainer from '../containers/HeaderContainer';
+import React from "react";
+import Preview from "./Preview";
+import HeaderContainer from "../containers/HeaderContainer";
 import HomeCardViewContainer from "../containers/HomeCardViewContainer";
-import SoldHouseCardContainer from '../containers/SoldHouseCardContainer';
+import SoldHouseCardContainer from "../containers/SoldHouseCardContainer";
 
 import "./css/RealEstateView.css";
 
@@ -9,7 +10,9 @@ export default class RealEstateView extends React.Component {
 
     render() {
         if (!this.props.web3) {
-            return <div>Loading Web3, accounts, and contract...</div>;
+            return (
+                <Preview />
+            );
         }
         return (
             this.props.soldProperties ?

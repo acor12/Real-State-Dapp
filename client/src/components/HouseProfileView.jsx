@@ -2,6 +2,7 @@ import React from "react";
 import HeaderContainer from "../containers/HeaderContainer";
 
 import "./css/HouseProfileView.css";
+import Preview from "./Preview";
 
 export default class HouseProfileView extends React.Component {
     constructor() {
@@ -73,7 +74,9 @@ export default class HouseProfileView extends React.Component {
 
     render() {
         if (!this.props.web3) {
-            return <div>Loading Web3, accounts, and contract...</div>;
+            return (
+                <Preview />
+            );
         }
         return (
             <div className="profile-container">
