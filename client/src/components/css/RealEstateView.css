@@ -1,0 +1,66 @@
+.App {
+    width: 100%;
+    height: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a0a0a014;
+}
+.app-sold {
+    width: 100%;
+    height: 1100px;
+    display: flex;
+    background-color: #a0a0a014;
+}
+.header-container {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    padding: 2% 0;
+}
+.line {
+    height: 4px;
+    background: black;
+    width: 32px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+}
+.card-house-container {
+    width: 85%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.card-house-container-sold {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+} 
+.card-notification {
+    text-align: center;
+    background-color: #fda631cc;
+    border-radius: 34px;
+    padding: 2% 0;
+    font-size: 1.15em;
+    color: white;
+}
+.sold-house-container {
+    background-color: var(--color-principal);
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 24px;
+}
+.recent-sales {
+        font-weight: bold;
+    font-size: 1.3em;
+    padding: 8px 0 24px 0;
+    color: white;
+}
+.real-estate-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

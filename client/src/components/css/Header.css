@@ -1,0 +1,57 @@
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+    max-height: 69px;
+}
+.header-container {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    padding: 2% 0;
+}
+.logo-container {
+    display: flex;
+    max-height: 48px;
+    width: 21%;
+    outline: none;
+    cursor: pointer;
+}
+.logo-container img {
+    display: block;
+    object-fit: fill;
+    width: 100%;
+}
+.header-menu {
+    max-height: 48px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+}
+.balance {
+    width: 30%;
+}
+.balance p {
+    cursor: pointer;
+}
+.new-property {
+    width: 35%;
+    white-space: nowrap;
+}
+.new-property p {
+    cursor: pointer;
+}
+.menu-option {
+    width: 6%;
+}
+.line {
+    height: 4px;
+    background: black;
+    width: 32px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+}
