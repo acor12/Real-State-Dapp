@@ -1,0 +1,108 @@
+.background-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #313131a8;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.new-property-modal {
+    background-color: white;
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 48px;
+    align-items: center;
+    border-radius: 8px;
+}
+.close-modal {
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: end;
+    padding-left: 56px;
+}
+.property-info {
+    padding-top: 4%;
+    width: 100%;
+    font-size: 0.9em;
+    text-align: left;
+}
+.title {
+    color: var(--color-principal)
+}
+.info-container {
+    width: 90%;
+    padding-top: 5%;
+    color: #6f6f6fed;
+}
+.info-container p {
+    padding-bottom: 5px;
+}
+.info-description {
+    width: 97%;
+    height: 90px;
+    border-radius: 8px;
+    border: 1px solid #6f6f6fed;
+    padding: 6px;
+    outline: none;
+}
+.info-price {
+    width: 120px;
+}
+.info-container input {
+    border-radius: 8px;
+    border: 1px solid #6f6f6fed;
+    padding: 4px;
+    outline: none;
+}
+.publish-button {
+    padding-top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.publish-button button {
+    color: white;
+    cursor: pointer;
+    background-color: var(--color-principal);
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 8px;
+}
+.image-button-container {
+    width: 30%;
+}
+.button-new-wrapper {
+    width: 25%;
+}
+[type="file"] {
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+}
+[type="file"]+label {
+    background-color: #6f6f6fa1;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px;
+    color: white;
+    text-align: center;
+}
+[type="file"]:focus +label {
+    outline: none;
+    background-color: rgba(63, 228, 63, 0.425);
+}

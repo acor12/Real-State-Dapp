@@ -1,0 +1,57 @@
+.balance-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #313131a8;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.balance-modal {
+    background-color: white;
+    width: 21%;
+    border-radius: 8px;
+    padding: 12px 48px;
+}
+.close-balance-modal {
+    text-align: end;
+    padding-left: 35px;
+    font-weight: bold;
+    padding-bottom: 21px;
+}
+.close-balance-modal p {
+    cursor: pointer;
+}
+.balance-modal-info {
+    text-align: center;
+    font-size: 1.2em;
+    padding-bottom: 26%;
+}
+.balance-title {
+    padding-bottom: 10%;
+}
+.balance-amount {
+    color: var(--color-principal);
+    font-weight: bold;
+}
+.balance-modal-button {
+    display: flex;
+    justify-content: center;
+}
+.withdrawal-wrapper {
+    width: 50%;
+}
+.withdrawal-wrapper button {
+    color: white;
+    border: none;
+    background-color: var(--color-principal);
+    padding: 3px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
