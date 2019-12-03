@@ -1,0 +1,37 @@
+.sold-card-container {
+    border-bottom: 2px solid white;
+    width: 100%;
+    margin-bottom: 12px;
+    color: white;
+    padding-bottom: 8px;
+}
+
+.sold-card-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.sold-image {
+    width:  45%;
+}
+.sold-wrapper {
+    width: 100%;
+    min-height: 75px;
+    display: flex;
+}
+.sold-wrapper img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+}
+.sold-info {
+    width: 50%;
+    padding-left: 5%;
+}
+.sold-title {
+    padding-bottom: 4px;
+}
+.sold-price {
+    font-size: 0.9em;
+}
