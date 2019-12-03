@@ -1,0 +1,149 @@
+.home-card-container, .home-card-container-placeholder {
+    display: flex;
+    width: 23%;
+    outline: none;
+    text-decoration: none;
+}
+.home-card-container{
+    margin-bottom: 2%;
+    padding: 0 10px;
+}
+.card-container{
+    display: flex;
+    height: 100%;
+}
+.card-container, .card-container-placeholder{
+    width: 100%;
+}
+.card, .card-placeholder {
+    width: 100%;
+    display: flex;
+    border-radius: 12px;
+    background-color: white;
+    flex-wrap: wrap;
+}
+.card-placeholder {
+    height: 100%;
+}
+.card-info-container {
+    width: 90%;
+    padding: 5%;
+    display: flex;
+    color: #6f6f6fed;
+}
+.text-info {
+    width: 70%;
+}
+.card-title {
+    font-weight: bold;
+}
+.card-description {
+    font-size: 0.8em;
+}
+.price-information {
+    text-align: center;
+    color: var(--color-principal);
+    font-weight: bold;
+}
+.image, .image-placeholder {
+    background-color: #3c3b3b3b;
+    height: 60%;
+    display: flex;
+    width: 100%;
+    border-radius: 12px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.card-description{
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.image img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 12px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px
+}
+.info, .info-placeholder {
+    height: 31%;
+    width: 93%;
+    display: flex;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/***Placeholder***/
+.home-card-container-placeholder {
+    height: 175px;
+    padding: 0px 6px 25px 6px;
+}
+.image-placeholder {
+    background-color: #3c3b3b3b;
+}
+.info-text {
+    width: 50%;
+}
+.title-placeholder {
+    height: 9px;
+    background-color: #3c3b3b3b;
+    width: 75%;
+    border-radius: 5px;
+    margin-bottom: 9%;
+}
+.placeholder-one {
+    height: 9px;
+    background-color: #3c3b3b3b;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+.placeholder-two {
+    height: 9px;
+    background-color: #3c3b3b3b;
+    width: 85%;
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+.placeholder-three {
+    height: 9px;
+    background-color: #3c3b3b3b;
+    width: 61%;
+    border-radius: 5px;
+}
+.price-container-placeholder {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.price-placeholder {
+    height: 14px;
+    background-color: #ff760070;
+    width: 88%;
+    border-radius: 5px;
+}
+
+@media(max-width:850px) {
+.home-card-container, .home-card-container-placeholder {
+    width: 30%;
+}
+
+}
+
+@media(max-width:550px) {
+.home-card-container, .home-card-container-placeholder {
+    width: 48%;
+}
+
+}
+
+@media(max-width:650px) {
+.home-card-container, .home-card-container-placeholder {
+    width: 100%;
+}
+
+}
